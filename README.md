@@ -1,2 +1,2 @@
 # cabalex.github.io
-This is a blank page at the moment. Perhaps you meant to go to my [Scratch FNF song converter](https://cabalex.github.io/fnf-song-converter/) or my [Astral Chain romfs documentation](https://cabalex.github.io/astral-chain-romfs/)?
+I don't know why you're looking at the GitHub page for this. Just [go to the website](https://cabalex.github.io/).
