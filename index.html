@@ -67,13 +67,12 @@
 			text-decoration: none;
 			color: #489AFA;
 			font-weight: bold;
+			width: 100%;
+			height: 100%;
 		}
 		.active:hover {
 			margin: 0.75em -0.25em;
 			color: #3C3744;
-			width: 20em;
-			padding: 0.5em 0.3em;
-			border-radius: 0.25em;
 			background-color: #DCEBE4;
 			box-shadow: 0.75em 0.75em rgba(0, 0, 0, 0.5);
 			outline: #DCEBE4 solid 0.2em;
@@ -82,12 +81,45 @@
 		.projectList li {
 			margin: 1em 0;
 			font-weight: normal;
-			color: #DCEBE4;
 			width: 20em;
 			padding: 0.5em 0.3em;
 			border-radius: 0.25em;
-			background-color: #3C3744;
 			box-shadow: 0.5em 0.5em rgba(0, 0, 0, 0.5);
+		}
+		.headerLi {
+			font-weight: bold;
+			color: #DCEBE4;
+			overflow: auto;
+			position: relative;
+			padding: 0.1em 0.3em !important;
+		}
+		.headerLi::before {
+			background-size: cover;
+			content: "";
+			position: absolute;
+			z-index: -1;
+			display: inline-block;
+			width: 100%;
+			height: 150%;
+			left: 0;
+			top: -50%;
+			-webkit-filter: blur(3px);
+			-moz-filter: blur(3px);
+			-o-filter: blur(3px);
+			-ms-filter: blur(3px);
+			filter: blur(3px);
+			content: "";
+		}
+		#AC::before {
+			background-image: url('https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,w_1089/ncom/en_US/games/switch/a/astral-chain-switch/hero');
+		}
+		#MISC::before {
+			background-image: url('assets/misc.png');
+		}
+		.active {
+			cursor:pointer;
+			color: #DCEBE4;
+			background-color: #3C3744;
 		}
 		.tooltip .tooltiptext {
 			visibility: hidden;
@@ -107,6 +139,7 @@
 		 	visibility: visible;
 		}
 	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<body>
 		<div id="topbar">
 			<ul style="list-style: none; display: flex; flex-direction: row; align-items: center; padding-left:0">
@@ -129,10 +162,14 @@
 		</div>
 		<div class="projectList">
 			<ul>
-				<a href="https://github.com/cabalex/AstralChain2Blender"><li class="active">AstralChain2Blender</li></a>
-				<a href="https://github.com/cabalex/Blender2AstralChain"><li class="active">Blender2AstralChain</li></a>
-				<a href="https://cabalex.github.io/astral-chain-romfs/"><li class="active">AC ROMFs documentation</li></a>
-				<a href="https://cabalex.github.io/fnf-song-converter/"><li class="active">FNF Scratch converter</li></a>
+				<li class="headerLi" id="AC"><h4>ASTRAL CHAIN</h4></li>
+				<li class="active" onclick="location.href='https://github.com/cabalex/AstralChain2Blender';">AstralChain2Blender</li>
+				<li class="active" onclick="location.href='https://github.com/cabalex/Blender2AstralChain';">Blender2AstralChain</li>
+				<li class="active" onclick="location.href='https://cabalex.github.io/astral-chain-romfs';">AC RomFS documentation</li>
+				<li class="active" onclick="location.href='https://gist.github.com/cabalex/64dd870863b130c5e0175a571fc65991';">Extract PTD text</li>
+				<li class="headerLi" id="MISC"><h4>FNF / SCRATCH</h4></li>
+				<li class="active" onclick="location.href='https://cabalex.github.io/fnf-song-converter';">FNF Scratch converter</li>
+				<li class="active" onclick="location.href='https://gist.github.com/cabalex/931885371f20a226e4c6a3391e2d3982';">FNF XML unpacker</li>
 			</ul>
 		</div>
 	</body>
