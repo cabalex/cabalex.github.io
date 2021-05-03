@@ -1,0 +1,227 @@
+<html>
+	<style>
+		body {
+			font-family: "Roboto", Roboto, sans-serif;
+		}
+		#topbar {
+			height: 50px;
+			width: 100%;
+			color: #DCEBE4;
+			background-color: #3C3744;
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 2;
+		}
+		#header {
+			align-items: center;
+			background-color: #3C3744;
+			color: white;
+			padding: 1em 5vw;
+			text-align: center;
+			border-radius: 0.25em;
+			left: 0;
+			width: 85vw;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.mainmenu {
+			position: relative;
+			background-color: #3C3744;
+			padding: 1em;
+			margin-left: 5vw;
+			margin-right: 5vw;
+			align-items: center;
+			height: 4em;
+			border-radius: 0.25em;
+			box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+			width: 80vw;
+			max-width: 25em;
+			min-width: 21em;
+		}
+		.heading {
+			position: absolute;
+			background-color: #DCEBE4;
+			padding: 1em;
+			top: 0.25em;
+			box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+			left: -1em;
+			border-radius: 0.25em;
+			font-family: "Verdana", Verdana, sans-serif;
+			font-weight: thin;
+		}
+		.menuIcons a {
+			margin-right: 1em;
+			color: white;
+		}
+		.mainmenuText {
+			color: #DCEBE4;
+			margin: 1.25em 0;
+		}
+		.menuIcons {
+			line-height:30px;
+			color:#DCEBE4;
+			padding-left:8em;
+		}
+		.menuIcons a {
+			color: inherit;
+		}
+		.projectList {
+			margin-left: 5%;
+			margin-right: auto;
+		}
+		.projectList ul {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+			color: #489AFA;
+			font-weight: bold;
+			width: 100%;
+			height: 100%;
+		}
+		.active:hover {
+			margin: 0.75em -0.25em;
+			color: #3C3744;
+			background-color: #DCEBE4;
+			box-shadow: 0.75em 0.75em rgba(0, 0, 0, 0.5);
+			outline: #DCEBE4 solid 0.2em;
+			outline-offset: 0.1em;
+		}
+		.projectList li {
+			margin: 1em 0;
+			font-weight: normal;
+			width: 70vw;
+			max-width: 20em;
+			min-width: 10em;
+			padding: 0.5em 0.3em;
+			border-radius: 0.25em;
+			box-shadow: 0.5em 0.5em rgba(0, 0, 0, 0.5);
+		}
+		.headerLi {
+			font-weight: bold;
+			color: #DCEBE4;
+			overflow: hidden;
+			position: relative;
+			padding: 0.1em 0.3em !important;
+			align-items: center;
+			display: flex;
+			cursor: pointer;
+		}
+		.headerLi h4 {
+			display: flex;
+			align-items: center;
+		}
+		.headerLi svg {
+			padding-right: 5px;
+		}
+		.headerLi::before {
+			background-size: cover;
+			content: "";
+			position: absolute;
+			z-index: -1;
+			display: inline-block;
+			width: 100%;
+			height: 150%;
+			left: 0;
+			top: -50%;
+			content: "";
+			transform: scale(1.1);
+		}
+		#GITHUB::before {
+			background-color: #69A56A;
+		}
+		#REDDIT::before {
+			background-color: #FF4F00;
+		}
+		#DISCORD::before {
+			background-color: #316BBD;
+		}
+		#YOUTUBE::before {
+			background-color: #F60000;
+		}
+		#SCRATCH::before {
+			background-color: #FFAA00;
+		}
+		.active {
+			cursor:pointer;
+			color: #DCEBE4;
+			background-color: #3C3744;
+		}
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			background-color: #489AFA;
+			box-shadow: 0.5em 0.5em rgba(0, 0, 0, 0.5);
+			color: #fff;
+			width: 300px;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px;
+			position: absolute;
+			z-index: 1;
+			top: 50px;
+			left: 5%;
+		}
+		.tooltip:hover .tooltiptext {
+		 	visibility: visible;
+		}
+		.footer {
+			left: 0;
+			bottom: 0;
+			font-weight: bold;
+			color: #DCEBE4;
+			overflow: hidden;
+			position: relative;
+			align-items: center;
+			text-align: center;
+			padding: 30px 0;
+			margin-bottom: 0;
+		}
+		.footer img {
+			background-size: cover;
+			content: "";
+			position: absolute;
+			z-index: -1;
+			display: ;
+			width: 100%;
+			top: -50%;
+			left: 0;
+			transform: scale(1.1);
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<body style="margin: 0">
+		<div id="topbar">
+			<ul style="list-style: none; display: flex; flex-direction: row; align-items: center; padding-left:0">
+				<li style="padding: 1em">
+					<a style="color: #ffffff; text-decoration: none; background-image: ; padding: 1em" href="https://cabalex.github.io"><b>cabalex.github.io</b></a>
+				</li>
+			</ul>
+		</div>
+		<br><br><br>
+		<div id="header"><b>Need to contact me?</b> Here's some methods you can reach me with.</div>
+		<br>
+		<div class="mainmenu">
+			<div class="heading">CONTACT_</div>
+			<div class="menuIcons"><a href="../">PROJECTS</a></div>
+			<div class="mainmenuText">▼ Methods to get in touch.</div>
+		</div>
+		<div class="projectList">
+			<ul>
+				<li class="headerLi" onclick="location.href='https://github.com/cabalex';" id="GITHUB"><h4><svg height="30px" style="color: white" viewBox="0 0 16 16" version="1.1" width="30px" aria-hidden="true"><path fill="white" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg> GITHUB (cabalex)</h4></li>
+				<li class="headerLi" onclick="location.href='https://www.reddit.com/user/cabalex';" id="REDDIT"><h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="_1O4jTk-dZ-VIxsCuYB6OR8" style="height:30px"><g><circle fill="white" cx="10" cy="10" r="10"></circle><path fill="#3c373b" d="M16.67,10A1.46,1.46,0,0,0,14.2,9a7.12,7.12,0,0,0-3.85-1.23L11,4.65,13.14,5.1a1,1,0,1,0,.13-0.61L10.82,4a0.31,0.31,0,0,0-.37.24L9.71,7.71a7.14,7.14,0,0,0-3.9,1.23A1.46,1.46,0,1,0,4.2,11.33a2.87,2.87,0,0,0,0,.44c0,2.24,2.61,4.06,5.83,4.06s5.83-1.82,5.83-4.06a2.87,2.87,0,0,0,0-.44A1.46,1.46,0,0,0,16.67,10Zm-10,1a1,1,0,1,1,1,1A1,1,0,0,1,6.67,11Zm5.81,2.75a3.84,3.84,0,0,1-2.47.77,3.84,3.84,0,0,1-2.47-.77,0.27,0.27,0,0,1,.38-0.38A3.27,3.27,0,0,0,10,14a3.28,3.28,0,0,0,2.09-.61A0.27,0.27,0,1,1,12.48,13.79Zm-0.18-1.71a1,1,0,1,1,1-1A1,1,0,0,1,12.29,12.08Z"></path></g></svg> REDDIT (u/cabalex)</h4></li>
+				<li class="headerLi" onclick="location.href='https://www.youtube.com/channel/UCOMFIndX4eZxIU1vfIWgaVQ';" id="YOUTUBE"><h4><image width="30px" style="padding: 2.5px 5px;" src="../assets/yt_icon.png"></image> YOUTUBE (Cabalex)</h4></li>
+				<li class="headerLi" onclick="location.href='https://discordapp.com/users/226534507883397120/';" id="DISCORD"><h4><image height="30px" style="align: center;" src="https://discord.com/assets/28174a34e77bb5e5310ced9f95cb480b.png"></image> DISCORD (cabalex#1538)</h4></li>
+				<h3>NICHE</h3>
+				<li class="headerLi" onclick="location.href='https://github.com/cabalex';" id="SCRATCH"><h4><image height="30px" src="https://u.cubeupload.com/csf30816/5aVuDN.png"></image> SCRATCH (cabalex)</h4></li>
+			</ul>
+		</div>
+		<br><br><br>
+		<div class="footer">
+			<img src="../assets/footer.png"><h2>cabalex 2021</h2><p>hopefully you enjoy the things i make</p>
+		</div>
+	</body>
+</html>
