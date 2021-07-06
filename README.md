@@ -1,2 +1,2 @@
 # cabalex.github.io
-I don't know why you're looking at the GitHub page for this. Just [go to the website](https://cabalex.github.io/).
+[The home for everything... as long as your definition of "everything" is "not much".](https://cabalex.github.io/).
