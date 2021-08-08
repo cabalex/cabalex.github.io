@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<style>
 		body {
@@ -138,13 +139,17 @@
 			background-color: #FF4F00;
 		}
 		#DISCORD::before {
-			background-color: #316BBD;
+			background-color: #5865F2;
 		}
 		#YOUTUBE::before {
 			background-color: #F60000;
 		}
-		#SCRATCH::before {
-			background-color: #FFAA00;
+		#EMAIL::before {
+			background-color: #3C3744
+		}
+		#EMAIL a {
+			color: #DCEBE4 !important;
+			padding: 0.5em 0.3em 
 		}
 		.active {
 			cursor:pointer;
@@ -185,11 +190,13 @@
 			content: "";
 			position: absolute;
 			z-index: -1;
-			display: ;
 			width: 100%;
 			top: -50%;
 			left: 0;
 			transform: scale(1.1);
+		}
+		h4 svg, h4 img {
+			width: 30px;
 		}
 	</style>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -197,26 +204,38 @@
 		<div id="topbar">
 			<ul style="list-style: none; display: flex; flex-direction: row; align-items: center; padding-left:0">
 				<li style="padding: 1em">
-					<a style="color: #ffffff; text-decoration: none; background-image: ; padding: 1em" href="https://cabalex.github.io"><b>cabalex.github.io</b></a>
+					<a style="color: #ffffff; text-decoration: none; padding: 1em" href="https://cabalex.github.io"><b>cabalex.github.io</b></a>
 				</li>
 			</ul>
 		</div>
 		<br><br><br>
-		<div id="header"><b>Need to contact me?</b> Here's some methods you can reach me with.</div>
+		<div id="header"><b>Need to contact me?</b> Here's some methods you can reach me with.<br>For help requests on my projects, it'd probably be better to open an issue there.</div>
 		<br>
 		<div class="mainmenu">
 			<div class="heading">CONTACT_</div>
 			<div class="menuIcons"><a href="../">PROJECTS</a></div>
 			<div class="mainmenuText">▼ Methods to get in touch.</div>
 		</div>
+		<script type="text/javascript">
+		function emailHandler() {
+			if (confirm("I may not respond quickly or at all when emailing. Use this as a last resort!\n\nIf you really need to, click OK.")) {
+				location.href = "mailto:cabal3x4@gmail.com"
+			}
+		}
+		</script>
 		<div class="projectList">
 			<ul>
 				<li class="headerLi" onclick="location.href='https://github.com/cabalex';" id="GITHUB"><h4><svg height="30px" style="color: white" viewBox="0 0 16 16" version="1.1" width="30px" aria-hidden="true"><path fill="white" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg> GITHUB (cabalex)</h4></li>
-				<li class="headerLi" onclick="location.href='https://www.reddit.com/user/cabalex';" id="REDDIT"><h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="_1O4jTk-dZ-VIxsCuYB6OR8" style="height:30px"><g><circle fill="white" cx="10" cy="10" r="10"></circle><path fill="#3c373b" d="M16.67,10A1.46,1.46,0,0,0,14.2,9a7.12,7.12,0,0,0-3.85-1.23L11,4.65,13.14,5.1a1,1,0,1,0,.13-0.61L10.82,4a0.31,0.31,0,0,0-.37.24L9.71,7.71a7.14,7.14,0,0,0-3.9,1.23A1.46,1.46,0,1,0,4.2,11.33a2.87,2.87,0,0,0,0,.44c0,2.24,2.61,4.06,5.83,4.06s5.83-1.82,5.83-4.06a2.87,2.87,0,0,0,0-.44A1.46,1.46,0,0,0,16.67,10Zm-10,1a1,1,0,1,1,1,1A1,1,0,0,1,6.67,11Zm5.81,2.75a3.84,3.84,0,0,1-2.47.77,3.84,3.84,0,0,1-2.47-.77,0.27,0.27,0,0,1,.38-0.38A3.27,3.27,0,0,0,10,14a3.28,3.28,0,0,0,2.09-.61A0.27,0.27,0,1,1,12.48,13.79Zm-0.18-1.71a1,1,0,1,1,1-1A1,1,0,0,1,12.29,12.08Z"></path></g></svg> REDDIT (u/cabalex)</h4></li>
-				<li class="headerLi" onclick="location.href='https://www.youtube.com/channel/UCOMFIndX4eZxIU1vfIWgaVQ';" id="YOUTUBE"><h4><image width="30px" style="padding: 2.5px 5px;" src="../assets/yt_icon.png"></image> YOUTUBE (Cabalex)</h4></li>
-				<li class="headerLi" onclick="location.href='https://discordapp.com/users/226534507883397120/';" id="DISCORD"><h4><image height="30px" style="align: center;" src="https://discord.com/assets/28174a34e77bb5e5310ced9f95cb480b.png"></image> DISCORD (cabalex#1538)</h4></li>
-				<h3>NICHE</h3>
-				<li class="headerLi" onclick="location.href='https://github.com/cabalex';" id="SCRATCH"><h4><image height="30px" src="https://u.cubeupload.com/csf30816/5aVuDN.png"></image> SCRATCH (cabalex)</h4></li>
+				<li class="headerLi" onclick="location.href='https://www.reddit.com/user/cabalex';" id="REDDIT"><h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="_1O4jTk-dZ-VIxsCuYB6OR8" style="height:30px"><g><circle fill="white" cx="10" cy="10" r="10"></circle><path fill="#FF4F00" d="M16.67,10A1.46,1.46,0,0,0,14.2,9a7.12,7.12,0,0,0-3.85-1.23L11,4.65,13.14,5.1a1,1,0,1,0,.13-0.61L10.82,4a0.31,0.31,0,0,0-.37.24L9.71,7.71a7.14,7.14,0,0,0-3.9,1.23A1.46,1.46,0,1,0,4.2,11.33a2.87,2.87,0,0,0,0,.44c0,2.24,2.61,4.06,5.83,4.06s5.83-1.82,5.83-4.06a2.87,2.87,0,0,0,0-.44A1.46,1.46,0,0,0,16.67,10Zm-10,1a1,1,0,1,1,1,1A1,1,0,0,1,6.67,11Zm5.81,2.75a3.84,3.84,0,0,1-2.47.77,3.84,3.84,0,0,1-2.47-.77,0.27,0.27,0,0,1,.38-0.38A3.27,3.27,0,0,0,10,14a3.28,3.28,0,0,0,2.09-.61A0.27,0.27,0,1,1,12.48,13.79Zm-0.18-1.71a1,1,0,1,1,1-1A1,1,0,0,1,12.29,12.08Z"></path></g></svg> REDDIT (u/cabalex)</h4></li>
+				<li class="headerLi" onclick="location.href='https://www.youtube.com/channel/UCOMFIndX4eZxIU1vfIWgaVQ';" id="YOUTUBE"><h4><img width="30px" style="padding: 2.5px 5px;" src="../assets/yt_icon.png"> YOUTUBE (Cabalex)</h4></li>
+				<li class="headerLi" onclick="location.href='https://discordapp.com/users/226534507883397120/';" id="DISCORD"><h4><img width="30px" src="https://discord.com/assets/28174a34e77bb5e5310ced9f95cb480b.png"> DISCORD (cabalex#1538)</h4></li>
+				<li class="headerLi" id="EMAIL"><a onclick="emailHandler()">EMAIL ME (not recommended)</a></li>
+				<h3>These are also mine</h3>
+				<li class="active" onclick="location.href='https://scratch.mit.edu/users/cabalex';" id="SCRATCH">SCRATCH (cabalex)</li>
+				<li class="active" onclick="location.href='https://steamcommunity.com/id/cabalex';" id="STEAM">STEAM (cabalex)</li>
+				<li class="headerLi" style="height: 37px; background-color: #3C3744; cursor: default" id="XBOX" title="i'm not paying 10 bucks for a name change >:(">XBOX (cabalex#3457)</li>
+				<li class="headerLi" style="height: 37px; background-color: #3C3744; cursor: default" id="EPICGAMES">EPIC GAMES (cabalex_)</li>
+				<h5 style="max-width: 25em">I'm on other platforms too, usually under some variation of Cabalex, Cabal3x, or Cabalex4. I don't have a public Instagram, Facebook, TikTok, or Twitter.</h5>
 			</ul>
 		</div>
 		<br><br><br>
