@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
+:root {
+    --black: #111;
+    --grey: #333;
+    --red: #ED4245;
+    --blue: #5865F2;
+    --yellow: #FEE75C;
+    --green: #57F287;
+    color-scheme: dark;
+}
+
+body {
+    background-color: var(--black);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+header {
+    background-color: var(--blue);
+}
+footer {
+    background-color: var(--grey);
+}
+header, footer {
+    border-radius: 0.25em;
+    height: 200px;
+    margin: 10px;
+    top: 0;
+    position: relative;
+}
+img {
+    vertical-align: middle;
+}
+header > * {
+    position: absolute;
+    margin: 10px;
+    bottom: 10px;
+    width: 100%;
+}
+footer > * {
+    position: absolute;
+    margin: 10px;
+    top: 10px;
+    width: 100%;
+}
+section > h1 {
+    margin-left: 20px;
+}
+.subtext {
+    font-size: 12px;
+}
+.spacer {
+    width: 20px;
+    flex-shrink: 0;
+}
+h1, h2, h3 {
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 5px;
+}
+.warning-bar {
+    margin: 10px;
+    background-color: var(--red);
+    padding: 10px;
+    border-radius: 0.25em;
+    text-decoration: none;
+}
+.warning-bar a, header a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+.cardlist {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px;
+    animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 slideInFromLeft;
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateY(50%);
+        filter: opacity(0);
+    }
+    100% {
+        transform: translateY(0);
+        filter: opacity(1);
+    }
+  }
+.card {
+    width: 200px;
+    position: relative;
+    flex-shrink: 0;
+    height: 100px;
+    border-radius: 0.25em;
+    z-index: 1;
+    user-select: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 0%;
+    overflow: hidden;
+    background-color: white;
+}
+.card:not([id]):not(.card-empty) {
+    background: linear-gradient(90deg, #000 0%, #fff 100%);
+}
+.card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
+    background-blend-mode: multiply;
+}
+.card:hover:not(.card-empty) {
+    transform: scale(1.1);
+    z-index: 2;
+    box-shadow: 0 0 5px black;
+}
+.card a {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 10px);
+    color: inherit;
+    top: 0;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 5px;
+    transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card:not(.card-empty) a:active {
+    transform: scale(0.9);
+    z-index: 2;
+}
+.card a * {
+    margin-top: 15px;
+}
+.card a h1 {
+    padding-top: 50px;
+    transition: padding 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card:hover:not(.card-empty) a h1 {
+    padding-top: 0px;
+}
+.card p {
+    font-size: 12px;
+}
+.card-empty {
+    border: 3px dashed white;
+    width: 194px;
+    background-color: transparent;
+    height: 94px;
+}
+.card-empty:before {
+    background: none;
+}
+/* my projects */
+#googledoodle { background-image: url('assets/misc.png') }
+#fnfscratch { background-image: url('assets/fnfscratch.png') }
+
+/* astral chain */
+#astralextractor { background-image: url('assets/astral-extractor.png') }
+#ac2b { background-image: url('assets/ac2b.png') }
+#b2ac { background-image: url('assets/b2ac.png') }
+#acromfs { background-image: url('assets/acromfs.png')}
+#titanfall {
+    background-image: url('assets/games/titanfall.png')
+}
+
+/* contact me */
+#youtube { background-color: var(--red) }
+#reddit { background-color: #FF5700 }
+#discord { background-color: var(--blue) }
+#github { background-color: var(--green) }
+#scratch { background-color: #F8A839 }
+#steam { background-color: var(--grey) }
+#paypal { background: linear-gradient(100deg,#0070ba,#1546a0) }

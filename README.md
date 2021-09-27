@@ -1,2 +1,2 @@
 # cabalex.github.io
-[The home for everything... as long as your definition of "everything" is "not much".](https://cabalex.github.io/).
+[My home page. Hope you like it!](https://cabalex.github.io/).

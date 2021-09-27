@@ -1,0 +1,137 @@
+.menuIcons {
+    line-height:30px;
+    color:#DCEBE4;
+    padding-left:8em;
+}
+.menuIcons a {
+    color: inherit;
+}
+.projectList {
+    margin-left: 5%;
+    margin-right: auto;
+}
+.projectList ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #489AFA;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+}
+.active:hover {
+    margin: 0.75em -0.25em;
+    color: #3C3744;
+    background-color: #DCEBE4;
+    box-shadow: 0.75em 0.75em rgba(0, 0, 0, 0.5);
+    outline: #DCEBE4 solid 0.2em;
+    outline-offset: 0.1em;
+}
+.projectList li {
+    margin: 1em 0;
+    font-weight: normal;
+    width: 70vw;
+    max-width: 20em;
+    min-width: 10em;
+    padding: 0.5em 0.3em;
+    border-radius: 0.25em;
+    box-shadow: 0.5em 0.5em rgba(0, 0, 0, 0.5);
+}
+.headerLi {
+    font-weight: bold;
+    color: #DCEBE4;
+    overflow: hidden;
+    position: relative;
+    padding: 0.1em 0.3em !important;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+.headerLi h4 {
+    display: flex;
+    text-shadow: none;
+    align-items: center;
+}
+.headerLi svg {
+    padding-right: 5px;
+}
+.headerLi::before {
+    background-size: cover;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    display: inline-block;
+    width: 100%;
+    height: 150%;
+    left: 0;
+    top: -50%;
+    content: "";
+    transform: scale(1.1);
+}
+#GITHUB::before {
+    background-color: #69A56A;
+}
+#REDDIT::before {
+    background-color: #FF4F00;
+}
+#DISCORD::before {
+    background-color: #5865F2;
+}
+#YOUTUBE::before {
+    background-color: #F60000;
+}
+#EMAIL::before {
+    background-color: #3C3744
+}
+#EMAIL a {
+    color: #DCEBE4 !important;
+    padding: 0.5em 0.3em 
+}
+.active {
+    cursor:pointer;
+    color: #DCEBE4;
+    background-color: #3C3744;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #489AFA;
+    box-shadow: 0.5em 0.5em rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 300px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    left: 5%;
+}
+.tooltip:hover .tooltiptext {
+     visibility: visible;
+}
+.footer {
+    left: 0;
+    bottom: 0;
+    font-weight: bold;
+    color: #DCEBE4;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 0;
+}
+.footer img {
+    background-size: cover;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    transform: scale(1.1);
+}
+h4 svg, h4 img {
+    width: 30px;
+}
