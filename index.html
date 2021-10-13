@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="cabalex.github.io">
+    <meta property="og:description" content="the home of all things mediocre">
+    <meta property="og:image" content="https://cabalex.github.io/assets/cover.png">
     <title>cabalex</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,17 +20,38 @@
         </div>
     </header>
     <!--<aside>
-        maybe a side bar where bookmarks are stored?
+        maybe a side bar?
     </aside>-->
-    <div class="warning-bar">
+    <!--<div class="warning-bar">
         <img src="assets/error_white_24dp.svg">
         You're viewing my home page's redesign. Wanna see the old one? <a href="old/index.html">Click here</a>.
-    </div>
+    </div>-->
+    <section>
+        <h1>My Bookmarks</h1>
+        <div class="cardlist" id="bookmarks">
+            <div class="spacer"></div>
+            <article class="card card-empty" id="add-link" onclick="addBookmark()">
+                <a><h1>Add your own link</h1></a>
+            </article>
+        </div>
+    </section>
     <section>
         <h1>What I'm working on</h1>
         <div class="cardlist" id="workingOn">
             <div class="spacer"></div>
-            <article class="card card-empty">
+            <article class="card" id="quiznot">
+                <a href="https://cabalex.github.io/quiznot">
+                    <h1>Quiznot</h1>
+                    <p>Make memorizing terms fun!</p>
+                </a>
+            </article>
+            <article class="card card-disabled" id="cheese2">
+                <a>
+                    <h1>cheese2</h1>
+                    <p>The second iteration of my Discord bot, currently a work in progress!</p>
+                </a>
+            </article>
+            <article class="card card-empty card-disabled">
                 <a><h1>Coming soon</h1></a>
             </article>
         </div>
@@ -53,7 +78,13 @@
                     <p>Unpack Friday Night Funkin' assets from XML/PNG to separate sprites.</p>
                 </a>
             </article>
-            <article class="card card-empty">
+            <article class="card">
+                <a href="https://github.com/cabalex/UEViewer/releases">
+                    <h1>UEViewer + NMH3</h1>
+                    <p>NMH3 support for UEViewer [WIP, currently inactive]</p>
+                </a>
+            </article>
+            <article class="card card-empty card-disabled">
                 <a><h1>Coming soon</h1></a>
             </article>
         </div>
@@ -146,20 +177,10 @@
         <div>
             <h1>Thanks for visiting!</h1>
             <p>Looking for more? Try searching for me!</p>
-            <b style="color: #999">cabalex 2021</b>
+            <b style="color: #999">cabalex 2021 - <a href="old/index.html">[old]</a></b>
         </div>
     </footer>
-    <script type="text/javascript">
-			
-        var link = document.createElement('link')
-        link.rel = 'shortcut icon'
-        
-        if (Math.round(Math.random()) == 0) {
-            link.href = "assets/github-ico-1.ico"
-        } else {
-            link.href = "assets/github-ico-2.ico"
-        }
-        document.getElementsByTagName('head')[0].appendChild(link)
+    <script type="text/javascript" src="index.js">
     </script>
 </body>
 </html>
