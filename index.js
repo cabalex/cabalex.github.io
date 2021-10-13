@@ -13,14 +13,13 @@ function addBookmark() {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", URL);
         xhr.setRequestHeader('Content-Type', 'text/plain')
-        xhr.onreadystatechange = function() { 
-            console.log("trigger, ", xhr.readyState)
+        xhr.onreadystatechange = function() {
             if (xhr.readyState == 4) {
                 const title = (/<title>(.*?)<\/title>/m).exec(xhr.responseText);
                 const desc = (/<meta property="og:description" content="(.*?)">/m).exec(xhr.responseText);
                 const imageUrl = (/<meta property="og:image" content="(.*?)">/m).exec(xhr.responseText);
                 let cleanUrl = URL.split("://")[1].replace("www.", "").split("/")[0];
-                links.push(`${imageUrl ? `background-image: url(${imageUrl[1]})` : ""}|<a href="${URL}"><h1>${title ? title[1] : cleanUrl}</h1><p>${desc ? desc[1] : ""}</p></a>`);
+                links.push(`${imageUrl ? `background-image: url("${imageUrl[1]}")` : ""}|<a createtime="${Date.now()}" href="${URL}"><h1>${title ? title[1] : cleanUrl}</h1><p>${desc ? desc[1] : ""}</p></a>`);
                 localStorage.setItem('HOME_LINKS', JSON.stringify(links))
                 
                 const node = createMyCard(links[links.length - 1])
@@ -47,9 +46,10 @@ for (var i = 0; i < links.length; i++) {
 }
 
 function contextMenu(ev) {
+    console.log(links.indexOf(`${this.style.backgroundImage != "" ? "background-image: " + this.style.backgroundImage : ""}|${this.innerHTML}`), `background-image: ${this.style.backgroundImage}|${this.innerHTML}`)
     ev.preventDefault();
     if (confirm("Delete?")) {
-        links.splice(links.indexOf(`${this.getAttribute('style')}|${this.innerHTML}`), 1);
+        links.splice(links.indexOf(`background-image: ${this.style.backgroundImage}|${this.innerHTML}`), 1);
         localStorage.setItem('HOME_LINKS', JSON.stringify(links));
         this.style.animation = "cardDelete 0.5s ease-in-out"
         setTimeout(() => {this.remove()}, 500)
