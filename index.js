@@ -52,7 +52,7 @@ function contextMenu(ev) {
         links.splice(links.indexOf(`background-image: ${this.style.backgroundImage}|${this.innerHTML}`), 1);
         localStorage.setItem('HOME_LINKS', JSON.stringify(links));
         this.style.animation = "cardDelete 0.5s ease-in-out"
-        setTimeout(() => {this.remove()}, 500)
+        setTimeout(() => {this.remove()}, 450)
     }
 }
 const myCards = document.getElementsByClassName('my-card');
