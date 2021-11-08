@@ -190,6 +190,9 @@ h1, h2, h3 {
 .card a * {
     margin-top: 15px;
 }
+.my-card h1 a {
+    overflow-wrap: break-word;
+}
 .card a h1 {
     padding-top: 50px;
     transition: padding 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -221,12 +224,18 @@ h1, h2, h3 {
     filter: brightness(0.8)
 }
 
+.mystery {
+    background: linear-gradient(30deg, var(--red) 30%, var(--blue) 100%) !important;
+}
+.mystery:hover {
+    transform: rotate(-5deg) scale(0.95);
+}
 /* working on */
-#quiznot { background-color: #42a5f5}
 #cheese2 { background-image: url('assets/cheese2.png') }
 
 /* my projects */
-#homepage-maker { background-image: url('assets/homepage-maker.png')}
+#quiznot { background-color: #42a5f5 }
+#homepage-maker { background-image: url('assets/homepage-maker.png') }
 #googledoodle { background-image: url('assets/misc.png') }
 #fnfscratch { background-image: url('assets/fnfscratch.png') }
 
@@ -237,8 +246,24 @@ h1, h2, h3 {
 #acromfs { background-image: url('assets/acromfs.png')}
 
 /* contact me */
+#twitter:after, #scratch:after {
+    content: "Best for DMs";
+    background-color: var(--red);
+    position: absolute;
+    border-radius: 50px;
+    padding: 0.25em 0.5em;
+    font-size: 14px;
+    font-weight: bold;
+    top: 5px;
+    right: 5px;
+    z-index: 5;
+}
+#scratch:after {
+    content: "FNF help only"
+}
 #youtube { background-color: var(--red) }
 #reddit { background-color: #FF5700 }
+#twitter { background-color: #1DA1F2}
 #discord { background-color: var(--blue) }
 #github { background-color: var(--green) }
 #scratch { background-color: #F8A839 }

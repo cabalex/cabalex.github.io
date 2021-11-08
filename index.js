@@ -36,7 +36,7 @@ function createMyCard(link) {
     var [style, inner] = link.split("|");
     node = document.createElement('article');
     node.setAttribute('class', 'card my-card')
-    console.log(style)
+    //console.log(style)
     node.setAttribute('style', style)
     node.innerHTML = inner;
     return node;
@@ -46,7 +46,7 @@ for (var i = 0; i < links.length; i++) {
 }
 
 function contextMenu(ev) {
-    console.log(links.indexOf(`${this.style.backgroundImage != "" ? "background-image: " + this.style.backgroundImage : ""}|${this.innerHTML}`), `background-image: ${this.style.backgroundImage}|${this.innerHTML}`)
+    //console.log(links.indexOf(`${this.style.backgroundImage != "" ? "background-image: " + this.style.backgroundImage : ""}|${this.innerHTML}`), `background-image: ${this.style.backgroundImage}|${this.innerHTML}`)
     ev.preventDefault();
     if (confirm("Delete?")) {
         links.splice(links.indexOf(`background-image: ${this.style.backgroundImage}|${this.innerHTML}`), 1);
@@ -84,3 +84,14 @@ const cardElems = document.getElementsByClassName('card-disabled');
 for (var i = 0; i < cardElems.length; i++) {
     cardElems[i].addEventListener('click', shakeAnim)
 }
+
+// inspirational!
+const randomInspired = [
+    "Try something new!",
+    "Don't forget to take frequent breaks!",
+    "Don't forget to stay hydrated!",
+    "You can do it!",
+    "I appreciate you :)",
+]
+
+document.getElementById('inspirational').innerHTML = randomInspired[Date.now() % randomInspired.length];
