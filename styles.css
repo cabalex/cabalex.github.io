@@ -1,271 +1,217 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans:wght@800&display=swap');
+
 :root {
-    --black: #111;
-    --grey: #333;
-    --red: #ED4245;
-    --blue: #5865F2;
-    --yellow: #FEE75C;
-    --green: #57F287;
-    color-scheme: dark;
+    --bg: #111;
+    --blue: #82AAFF;
+    --blue-dark: #4d7bcb;
+    --red: #FF5572;
+    --yellow: #FFCB6B;
+    --purple: #C792EA;
+    --green: #A9C77D;
+    --green-dark: #799650;
 }
 
 body {
-    background-color: var(--black);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg);
+    color: #ddd;
+    font-family: 'Roboto Mono', monospace;
+    width: 100%;
+    height: 100%;
     margin: 0;
 }
-header {
-    background-color: var(--blue);
-}
-footer {
-    background-color: var(--grey);
-}
-header, footer {
-    border-radius: 0.25em;
-    height: 200px;
-    margin: 10px;
-    top: 0;
-    position: relative;
-}
-img {
-    vertical-align: middle;
-}
-header > * {
-    position: absolute;
-    margin: 10px;
-    bottom: 10px;
-    width: 100%;
-}
-footer > * {
-    position: absolute;
-    margin: 10px;
-    top: 10px;
-    width: 100%;
-}
-section > h1 {
-    margin-left: 20px;
-}
-.subtext {
-    font-size: 12px;
-}
-.spacer {
-    width: 20px;
-    flex-shrink: 0;
-}
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
     font-family: 'Work Sans', sans-serif;
-    margin-bottom: 5px;
 }
-.warning-bar {
-    margin: 10px;
-    background-color: var(--red);
-    padding: 10px;
-    border-radius: 0.25em;
-    text-decoration: none;
+.hidden {
+    font-family: 'Flow Circular', sans-serif;
+    font-size: 1.2em;
+    line-height: 0.8em;
 }
-*:not(.card) > a {
-    color: inherit;
+.error {
+    color: var(--red);
+}
+main {
+    max-width: 500px;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+}
+a {
+    color: var(--blue);
     text-decoration: none;
     font-weight: bold;
 }
-.cardlist {
+
+.popup {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    width: min(490px, 100%);
+    height: 1em;
+    line-height: 1em;
+    background-color: var(--blue-dark);
+    z-index: 1;
+
+    border-radius: 5px;
+    border: 2px solid var(--blue);
+    padding: 5px;
+
     display: flex;
     flex-direction: row;
-    gap: 0.5em;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 10px;
-    animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 slideInFromBottom;
+    align-items: center;
+    justify-content: space-between;
 }
-@keyframes slideInFromBottom {
-    0% {
-        transform: translateY(50%);
-        filter: opacity(0);
-    }
-    100% {
-        transform: translateY(0);
-        filter: opacity(1);
-    }
-}
-@keyframes cardDelete {
-    0% {
-        transform: translateY(0);
-        filter: opacity(1);
-    }
-    50% {
-        transform: translateY(100%);
-        filter: opacity(0);
-        width: 200px;
-    }
-    100% {
-        transform: translateY(100%);
-        filter: opacity(0);
-        width: 0px;
-    }
-}
-@keyframes cardAdd {
-    0% {
-        transform: translateY(100%);
-        filter: opacity(0);
-        width: 0px;
-    }
-    50% {
-        transform: translateY(100%);
-        filter: opacity(0);
-        width: 200px;
-    }
-    100% {
-        transform: translateY(0);
-        filter: opacity(1);
-    }
-}
-@keyframes shakeDeny {
-    0% {
-        transform: 0;
-        filter: brightness(1);
-    }
-    25% {
-        transform: translateX(-10px);
-        filter: brightness(0.8);
-    }
-    75% {
-        transform: translateX(10px);
-        filter: brightness(0.8);
-    }
-    100% {
-        filter: brightness(1);
-        transform: 0;
-    }
-}
-.card {
-    width: 200px;
-    position: relative;
-    flex-shrink: 0;
-    height: 100px;
-    border-radius: 0.25em;
-    z-index: 1;
-    user-select: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 100% 0%;
-    overflow: hidden;
-    background-color: white;
-}
-.card:not([id]):not(.card-empty):not(.my-card) {
-    background: linear-gradient(90deg, #000 0%, #fff 100%);
-}
-.card::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
-    background-blend-mode: multiply;
-}
-.card:hover:not(.card-empty):not(.card-disabled) {
-    transform: scale(1.1);
-    z-index: 2;
-    box-shadow: 0 0 5px black;
-}
-.card a {
-    position: absolute;
-    height: 100%;
-    width: calc(100% - 10px);
-    color: inherit;
-    top: 0;
-    text-decoration: none;
-    overflow: hidden;
-    padding: 5px;
-    transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.card:not(.card-empty):not(.card-disabled) a:active {
-    transform: scale(0.9);
-    z-index: 2;
-}
-.card a * {
-    margin-top: 15px;
-}
-.my-card h1 a {
-    overflow-wrap: break-word;
-}
-.card a h1 {
-    padding-top: 50px;
-    transition: padding 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.card:hover:not(.card-empty) a h1 {
-    padding-top: 0px;
-}
-.card p {
-    font-size: 12px;
-}
-.card-empty {
-    border: 3px dashed white;
-    width: 194px;
+button {
     background-color: transparent;
-    height: 94px;
-}
-.card-empty:before {
-    background: none;
-}
-/* my links */
-.my-card {
-    background-color: var(--blue);
-}
-#add-link {
-    transition: filter 0.2s;
+    border: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto Mono', monospace;
+    padding: 5px;
     cursor: pointer;
 }
-#add-link:hover {
-    filter: brightness(0.8)
+.popup.success {
+    background-color: var(--green-dark);
+    border-color: var(--green);
 }
-
-.mystery {
-    background: linear-gradient(30deg, var(--red) 30%, var(--blue) 100%) !important;
-}
-.mystery:hover {
-    transform: rotate(-5deg) scale(0.95);
-}
-/* working on */
-#cheese2 { background-image: url('assets/cheese2.png') }
-
-/* my projects */
-#quiznot { background-color: #42a5f5 }
-#homepage-maker { background-image: url('assets/homepage-maker.png') }
-#googledoodle { background-image: url('assets/misc.png') }
-#fnfscratch { background-image: url('assets/fnfscratch.png') }
-
-/* astral chain */
-#astralextractor { background-image: url('assets/astral-extractor.png') }
-#ac2b { background-image: url('assets/ac2b.png') }
-#b2ac { background-image: url('assets/b2ac.png') }
-#acromfs { background-image: url('assets/acromfs.png')}
-
-/* contact me */
-#twitter:after, #scratch:after {
-    content: "Best for DMs";
+.popup.error {
     background-color: var(--red);
+    border-color: var(--red);
+    color: white;
+}
+.projectList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.project {
+    padding: 10px;
+    position: relative;
+    background-color: #222;
+    border-radius: 5px;
+    border: 2px solid var(--blue);
+    width: calc(100% - 24px);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+
+    transition: background-color 0.1s ease-in-out;
+}
+div.project {
+    color: var(--purple);
+    border-color: var(--purple);
+}
+a.project {
+    font-weight: unset;
+}
+.project > * {
+    width: 50%;
+    overflow-wrap: break-word;
+}
+.project h1 span {
+    font-size: 0.45em;
+    font-family: 'Roboto Mono', monospace;
+    display: block;
+}
+.project:after {
+    content: '';
     position: absolute;
-    border-radius: 50px;
-    padding: 0.25em 0.5em;
-    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    bottom: -1px;
+    right: -1px;
+    background-color: var(--blue);
+    clip-path: polygon(100% 100%, 0% 100%, 100% 0);
+    transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+}
+div.project:after {
+    background-color: var(--purple);
+}
+a.project:hover {
+    background-color: #111;
+}
+a.project:hover:after {
+    width: 50px;
+    height: 50px;
+}
+
+aside#cheese {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(calc(calc(100% - min(500px, 100%)) / 2) - 75px);
+    height: 100%;
+    margin: 0 25px;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#cheese img {
+    height: 50vh;
+}
+.textbox {
+    background-color: #aaa;
+    padding: 10px;
+    border: 2px solid #ccc;
+    color: black;
+}
+.textbox h2, .textbox p {
+    margin: 0;
     font-weight: bold;
-    top: 5px;
-    right: 5px;
-    z-index: 5;
 }
-#scratch:after {
-    content: "FNF help only"
+.textbox a {
+    color: var(--blue-dark)
 }
-#youtube { background-color: var(--red) }
-#reddit { background-color: #FF5700 }
-#twitter { background-color: #1DA1F2}
-#discord { background-color: var(--blue) }
-#github { background-color: var(--green) }
-#scratch { background-color: #F8A839 }
-#steam { background-color: var(--grey) }
-#paypal { background: linear-gradient(100deg,#0070ba,#1546a0) }
+.textbox span {
+    display: block;
+    font-size: 0.8em;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #aaa;
+}
+canvas#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@media screen and (max-width: 1100px) {
+    main {
+        margin: 10px;
+    }
+    aside#cheese {
+        width: calc(calc(100% - min(500px, 100%)) - 75px);
+    }
+}
+@media screen and (max-width: 850px) {
+    main {
+        margin: auto;
+    }
+    aside#cheese {
+        position: relative;
+        width: calc(100% - 50px);
+    }
+}
+@media screen and (max-width: 550px) {
+    .project {
+        flex-direction: column;
+    }
+    .project > * {
+        width: 100%;
+        margin: 0;
+    }
+}

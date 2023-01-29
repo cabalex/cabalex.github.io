@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&family=Passion+One:wght@400&display=swap');
+:root {
+    --black: #111;
+    --grey: #333;
+    --red: #ED4245;
+    --blue: #5865F2;
+    --yellow: #FEE75C;
+    --green: #57F287;
+    color-scheme: dark;
+}
+
+body {
+    background-color: var(--black);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+h1, h2, h3 {
+    font-family: 'Passion One', Arial, sans-serif;
+    font-weight: 400;
+}
+header, footer {
+    width: min(100%, 1460px);
+    background-color: var(--blue);
+    margin: auto;
+    height: 200px;
+}
+header h1 {
+    margin-top: 0;
+}
+footer {
+    margin-top: 20vh;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.filters {
+    width: min(calc(100% - 20px), 1460px);
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    margin: auto;
+    z-index: 5;
+    background-color: #242424;
+    overflow-y: auto;
+}
+.filter-list {
+    display: flex;
+    gap: 10px;
+}
+.filter-list > * {
+    background-color: #444;
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    gap: 10px;
+    padding-top: 10px;
+    margin: auto;
+}
+.project {
+    width: 200px;
+    height: 200px;
+    background-color: #777;
+    color: #fafafa;
+    position: relative;
+
+    animation-fill-mode: forwards;
+}
+.project h2 {
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    font-size: 2.25rem;
+    margin: 0;
+    line-height: 0.9em;
+}
+.filler, .filler-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: #fff;
+    filter: brightness(200%);
+}
+.filler-dark {
+    background-color: black;
+    filter: brightness(0%);
+}
+@keyframes openProject {
+    0% {
+        width: 200px;
+        height: 200px;
+    }
+    50% {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        filter: brightness(200%);
+    }
+    100% {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        filter: brightness(200%);
+    }
+}
+@keyframes openProjectDark {
+    0% {
+        width: 200px;
+        height: 200px;
+    }
+    50% {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        filter: brightness(0%);
+    }
+    100% {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        filter: brightness(0%);
+    }
+}
