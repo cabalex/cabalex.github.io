@@ -12,6 +12,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="newLook">
+        <img alt="" src="data:image/png;base64,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" />
+        <div class="text">
+            <h2>A new look is coming soon</h2>
+            <p>Cabalex is improving his home page with a more modern look and feel</p>
+        </div>
+    </div>
+    <style>
+        .newLook {
+            background-color: #111;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .newLook .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .newLook h2, .newLook p {
+            margin: 0;
+        }
+    </style>
     <main>
         <h1 style="color: #fff">Hi, I'm cabalex</h1>
         <p style="font-size: 0.9em; transform: translateY(-20px)">he/him - pronounced "CAB ALEX"</p>
