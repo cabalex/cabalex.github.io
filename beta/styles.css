@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@700&family=Space+Grotesk&display=swap');
+:root {
+    --text: #fffafa;
+    --background: #111111;
+    --primary: #f9b371;
+    --secondary: #181801;
+    --accent: #ed4245;
+    --success: #9BDB57;
+    color-scheme: dark;
+}
+
+body {
+    background-image: url('./assets/bg-pattern.svg');
+    margin: 0;
+    color: var(--text);
+    background-color: var(--background);
+    font-family: 'Space Grotesk', Arial, sans-serif;
+}
+h1, h2, h3, h4 {
+    font-family: 'Lexend Exa', Arial, sans-serif;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    height: 75px;
+}
+#logo {
+    position: relative;
+    transform: translateX(-25px);
+}
+#logo svg {
+    transform: scale(0.8) translate3d(0px, 0px, 0px) !important;
+}
+.link {
+    font-family: 'Lexend Exa', Arial, sans-serif;
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: color 0.1s ease-in-out;
+}
+.link:hover, .link:focus-visible {
+    outline: none;
+    color: var(--accent);
+}
+header a {
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+a {
+    color: var(--accent);
+    text-decoration: unset;
+    font-weight: bolder;
+}
+.btnrow, .keyrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.keyrow {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.key {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--text);
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+.key:after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: 2px;
+    left: 2px;
+    border-radius: 5px;
+    z-index: -1;
+    background-color: var(--accent);
+}
+
+/* Quick switcher */
+#quickSwitcher {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: #111;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 40%;
+
+    transition: top 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#quickSwitcher.hidden {
+    top: -400px;
+}
+#quickSwitcher input {
+    background-color: #333;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--text);
+    font-size: 1.5rem;
+    font-family: unset;
+    font-weight: bold;
+    width: calc(100% - 20px);
+}
+#quickSwitcherResults {
+    max-height: 100px;
+    background-color: #333;
+    border-radius: 5px;
+}
+.result {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+    color: var(--text);
+}
+.result h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.result p {
+    font-size: 1rem;
+    color: #bbb;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.result:hover, .result:focus-visible {
+    background-color: #555;
+    outline-color: var(--primary);
+}
+
+
+/* Hero section */
+main#hero {
+    background-color: #333;
+    height: calc(100vh - 75px);
+    position: relative;
+    z-index: 1;
+}
+main .keyTooltip {
+    position: absolute;
+    opacity: 0.5;
+    top: 0%;
+    left: 50%;
+    width: 40%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+main .text {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    width: 40%;
+    transform: translateY(-50%);
+}
+main .text h3, main .text h1 {
+    margin: 0;
+}
+main .text h3 {
+    font-size: 1.5rem;
+}
+main .text h1 {
+    font-size: 4rem;
+}
+main .scrollIncentive {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main .scrollIncentive svg {
+    animation: moveArrow 2s ease-in-out infinite;
+}
+@keyframes moveArrow {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* devices */
+.mobile {
+    position: fixed;
+    bottom: -150px;
+    right: 50px;
+    width: 270px;
+    height: 600px;
+    padding: 10px 10px;
+    background-color: #555;
+    border-radius: 20px;
+    z-index: -1;
+}
+.mobile div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+.mobile:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 18px;
+    height: 15px;
+    width: 75px;
+    border-radius: 30px;
+    background-color: #555;
+    z-index: 2;
+}
+.desktop {
+    position: fixed;
+    bottom: 200px;
+    right: 10%;
+    width: 850px;
+    height: 530px;
+    padding: 10px 10px;
+    background-color: #333;
+    border-radius: 20px;
+    z-index: -2;
+}
+.desktop div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    aspect-ratio: 16 / 9;
+    transition: all .3s ease-in-out;
+    border-radius: 10px;
+}
+.desktop:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 30px;
+    width: 50%;
+    transform: translateX(50%);
+    border-radius: 0 0 10px 10px;
+    background-color: #222;
+}
+
+/* projects */
+.project {
+    height: 100vh;
+}
+.project .text {
+    width: calc(40% - 100px);
+    padding: 50px;
+    top: 50px;
+    position: sticky;
+}
+.project .text > span {
+    color: #bbb;
+    font-weight: bold;
+}
+.project .text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+.why {
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 30px;
+    margin-top: 40px;
+    position: relative;
+}
+.why:before {
+    content: 'BUT WHY?';
+    font-family: 'Lexend Exa', Arial, sans-serif;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    left: 15px;
+    top: -20px;
+    background-color: var(--accent);
+    padding: 5px 10px;
+    border-radius: 100px;
+}
+.linkBtn {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    background-color: var(--accent);
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    transition: gap 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+.linkBtn:hover, .linkBtn:focus-visible {
+    gap: 20px;
+    background-color: var(--primary);
+}
+/* JANK HACK... but I'm not sure of a cleaner way without manually downsizing the SVG
+or removing the hover effect... whoops! */
+.repoBtn {
+    transform: scale(0.5) translateX(-30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.repoBtn path {
+    transition: 0.1s ease-in-out;
+}
+.repoBtn:hover path {
+    fill: var(--primary) !important;
+}
+
+/* footer */
+footer {
+    height: 350px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+footer:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    height: calc(100% - 36px);
+    width: calc(100% - 36px);
+    opacity: 0.2;
+    background: url('./assets/bg-stripe.svg'), linear-gradient(180deg, var(--background) 0%, var(--secondary) 100%);
+    border-radius: 10px;
+    border: 4px solid var(--primary);
+}
+footer .text {
+    width: 50%;
+    text-align: center;
+    padding: 50px;
+    top: 50px;
+    position: sticky;
+    z-index: 1;
+}
+footer > .btnrow {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    gap: 40px;
+    transform: translateX(-50%);
+    background-color: var(--background);
+    border-radius: 10px;
+    padding: 10px 20px;
+    z-index: 1;
+}

@@ -7,200 +7,216 @@
     <meta property="og:title" content="cabalex.github.io">
     <meta property="og:description" content="the home of all things mediocre">
     <meta property="og:image" content="https://cabalex.github.io/assets/cover.png">
-    <title>cabalex</title>
-
+    <title>cabalex.github.io</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" ></script>
 </head>
 <body>
-    <div class="newLook">
-        <img alt="" src="data:image/png;base64,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" />
-        <div class="text">
-            <h2>A new look is coming soon</h2>
-            <p>Cabalex is improving his home page with a more modern look and feel</p>
+    <section class="bento">
+        <div class="bentoInner">
+            <div id="title">
+                <div class="borderInner">
+                    <span>welcome to</span>
+                    <h1>cabalex.github.io</h1>
+                </div>
+            </div>
+            <div id="intro">
+                <div class="borderInner">
+                    <h1>👋 Hey, I'm Alex</h1>
+                    <p>I'm a developer, designer, and hyperfixator making fun things on the web.</p>
+                    <p>I'm experienced in HTML/CSS/JS/TS and frameworks like React/Svelte, and I've done design work with Figma. I also work with Python and C++.</p>
+                    <p>I love using tech to solve problems. If something's bugging me, my first instinct is to see if I can code something to make it easier.</p>
+                    <p>Keep on making cool things!</p>
+                </div>
+                <img src="/assets/hi.png">
+            </div>
+            <div id="support">
+                <div class="borderInner">
+                    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Like what I make?', '#ed4245', 'I3I2C6ZU9');kofiwidget2.draw();</script> 
+                </div>
+                <style>
+                    .btn-container {
+                        height: 100%;
+                        width: 100%;
+                    }
+                    a.kofi-button {
+                        height: calc(100% - 20px);
+                        width: calc(100% - 20px);
+                        padding: 10px !important;
+                        display: flex !important;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 20px !important;
+                    }
+                </style>
+            </div>
+            <div id="gallery">
+                <div id="carousel"></div>
+                <button id="leftGallery">&lt;</button>
+                <button id="rightGallery">&gt;</button>
+            </div>
+            <div id="live">
+                <span>LIVE</span>
+                <div class="label">
+                    <h1 id="liveTitle">Mystery Zone</h1>
+                    <p id="location">The Void</p>
+                </div>
+            </div>
+            <div id="socials">
+                <div class="borderInner">
+                    <h1>Contact me</h1>
+                    <div class="socialGrid">
+                        <a href="https://github.com/cabalex" class="social github" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/github.svg">
+                        </a>
+                        <a href="https://youtube.com/c/cabalex" styl class="social youtube" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/youtube.svg">
+                        </a>
+                        <a href="https://twitter.com/cabalex4" class="social twitter" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/twitter.svg">
+                        </a>
+                        <a href="https://tumblr.com/cabalex" class="social tumblr" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/tumblr.svg">
+                        </a>
+                        <a href="mailto:cabal3x4@gmail.com" class="social email" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/email.svg">
+                        </a>
+                    </div>
+                    <p>everywhere else - cabalex / cabalex4</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <style>
-        .newLook {
-            background-color: #111;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-        }
-        .newLook .text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-        .newLook h2, .newLook p {
-            margin: 0;
-        }
-    </style>
-    <main>
-        <h1 style="color: #fff">Hi, I'm cabalex</h1>
-        <p style="font-size: 0.9em; transform: translateY(-20px)">he/him - pronounced "CAB ALEX"</p>
-        <p style="font-size: 1.2em; font-weight: bold">I make things. And occasionally, they work!</p>
-        <p></p>
-        <p>I'm a software developer / """artist""" / SD GUNDAM WORLD enthusiast who just likes making cool fun things.</p>
-        <p>I'm well versed in HTML/CSS/JavaScript, TypeScript/Node.JS development, and frameworks like React and Svelte. I also work in Python and rarely C++.</p>
-        <p>If you like what I make, consider buying me a coffee on Ko-fi!</p>
-        <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Like what I make?', '#ed4245', 'I3I2C6ZU9');kofiwidget2.draw();</script> 
-        <h2>Need to contact me?</h2>
-        <p><a style="color: var(--green)" href="https://github.com/cabalex">GitHub (cabalex)</a></p>
-        <p><a style="color: var(--red)" href="https://youtube.com/c/cabalex">YouTube (Cabalex)</a></p>
-        <p><a style="color: var(--blue)" href="https://cabalex.tumblr.com/">Tumblr (@cabalex)</a> <-- dm me here!</p>
-        <p><a style="color: #fff" href="mailto:cabal3x4@gmail.com">Email (cabal3x4@gmail.com)</a></p>
-        cabalex / cabalex4 everywhere else
-        <p>Check out some of my projects below!</p>
+    </section>
+    <section class="projects">
+        <h1>Projects</h1>
         <div class="projectList">
-            <h2>Greatest hits</h2>
-            <a class="project" href="https://chrome.google.com/webstore/detail/lecturelighter/ncmmnjgdnafpjbgmgjghmiciknejojfp">
-                <h1>
-                    <span>NOW A CHROME EXTENSION!</span>
-                    LectureLighter
-                </h1>
-                <p>Make lectures easier to watch by taking out the silent parts</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/yaucsccs">
-                <h1>
-                    SlugSchedule
-                </h1>
-                <p>SlugSchedule - for when the UCSC class search is too slow!!</p>
-            </a>
-            <h2>Astral Chain</h2>
-            <a class="project" href="https://cabalex.github.io/ac-quest-editor">
-                <h1>
-                    <span>NEW!</span>
-                    Astral Chain Quest Editor
-                </h1>
-                <p>View, edit, and create custom cases for Astral Chain</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/platinum-extractor">
-                <h1>
-                    Platinum Extractor
-                </h1>
-                <p>A (work-in-progress!) extractor for Platinum Games games, right in the browser</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/astral-extractor">
-                <h1>
-                    Astral Extractor
-                </h1>
-                <p>The ultimate Astral Chain modding tool, right in your browser</p>
-            </a>
-            <a class="project" href="https://github.com/cabalex/NieR2Blender2NieR">
-                <h1>
-                    AstralChain 2Blender2 AstralChain
-                </h1>
-                <p>Extract, modify, and repack Astral Chain models! Fork of NieR2Blender2NieR</p>
-            </a>
-            <a class="project" href="https://docs.google.com/spreadsheets/d/1qTOnFUdTfPtXfizpqoj2IbcLhTCJWRiF9MI3N8wiP3U/edit?usp=sharing">
-                <h1>
-                    AC RomFS Docs
-                </h1>
-                <p>Documentation on Astral Chain's RomFS for game ripping/modding</p>
-            </a>
-            <h2><a style="color: white" href="https://github.com/knohow">Knohow</a></h2>
-            <div class="project">
-                <h1>
-                    <span>NO LONGER AVAILABLE - SORRY!</span>
-                    PeerConnect
-                </h1>
-                <p>(Hackathon 2023) Connect to a peer in your community for advice, tutoring, or just to talk</p>
+            <div class="section">
+                <h2>Greatest hits</h2>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/slugschedule">
+                    <h3>SlugSchedule</h3>
+                    <p>For when the UCSC class search is too slow!!</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/get-tools">
+                    <h3>GET Tools</h3>
+                    <p>View campus spending, scan in-store, and share with friends</p>
+                </a>
             </div>
-            <div class="project">
-                <h1>
-                    <span>NO LONGER AVAILABLE - SORRY!</span>
-                    PostIt
-                </h1>
-                <p>(Hackathon 2022) A platform to share and collaborate on notes</p>
+            <div class="section">
+                <h2>Astral Chain</h2>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/ac-quest-editor">
+                    <h3>Astral Chain Quest Editor</h3>
+                    <p>View, edit, and create custom cases for Astral Chain</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/platinum-extractor">
+                    <h3>Platinum Extractor</h3>
+                    <p>A (work-in-progress!) extractor for Platinum Games games, right in your browser</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://github.com/cabalex/NieR2Blender2NieR">
+                    <h3>AstralChain2Blender 2AstralChain</h3>
+                    <p>Extract, modify, and repack Astral Chain models! Fork of NieR2Blender2NieR</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://docs.google.com/spreadsheets/d/1qTOnFUdTfPtXfizpqoj2IbcLhTCJWRiF9MI3N8wiP3U/edit?usp=sharing">
+                    <h3>Astral Chain RomFS Docs</h3>
+                    <p>Documentation on Astral Chain's RomFS for game ripping/modding</p>
+                </a>
             </div>
-            <a class="project" href="https://cabalex.github.io/quiznot">
-                <h1>Quiznot</h1>
-                <p>(CAC 2022) Make memorizing terms fun!</p>
-            </a>
-            <h2>Other projects</h2>
-            <a class="project" href="https://cabalex.github.io/cheese2">
-                <h1>
-                    Cheese2
-                </h1>
-                <p>My semi-sentient work-in-progress Discord bot!</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/siivadb">
-                <h1>
-                    SiIvaDB
-                </h1>
-                <p>A database for browsing SiIvaGunner's thousands of high quality rips</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/lecturelighter">
-                <h1>
-                    <span>DON'T WANT TO INSTALL ANYTHING?</span>
-                    LectureLighter (Web)
-                </h1>
-                <p>Make lectures easier to watch by taking out the silent parts</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/tpt2-tools">
-                <h1>
-                    TPT2 Tools
-                </h1>
-                <p>A collection of tools for Theme Park Tycoon 2</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/5217">
-                <h1>
-                    5217
-                </h1>
-                <p>A rehost of 5217.app (now down), a productivity tool. Work 52 min, break 17 min!</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/dlr-sounds">
-                <h1>
-                    DLR Sounds
-                </h1>
-                <p>Immerse yourself in the sounds from the parks!</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/homepage-maker/">
-                <h1>
-                    Homepage Maker
-                </h1>
-                <p>Make your own homepages</p>
-            </a>
-            <a class="project" href="https://github.com/cabalex/google-doodle-mod-loader">
-                <h1>
-                    Google Doodle Mod Loader
-                </h1>
-                <p>Add Friday Night Funkin' songs to the 2021 Olympics Google Doodle!</p>
-            </a>
-            <a class="project" href="https://cabalex.github.io/fnf-song-converter/">
-                <h1>
-                    FNF Song Converter
-                </h1>
-                <p>Convert Friday Night Funkin' songs to Scratch!</p>
-            </a>
-            <a class="project" href="https://gist.github.com/cabalex/931885371f20a226e4c6a3391e2d3982">
-                <h1>
-                    <span>GITHUB GIST</span>
-                    FNF XML Unpacker
-                </h1>
-                <p>Unpack Friday Night Funkin' assets from XML/PNG to separate sprites</p>
-            </a>
+            <div class="section">
+                <h2>Knohow & HSMC</h2>
+                <a class="project disabled" rel="noopener noreferrer" target="_blank">
+                    <h3>PeerConnect (no longer available)</h3>
+                    <p>(Hackathon 2023) Connect to a peer in your community for advice, tutoring, or just to talk</p>
+                </a>
+                <a class="project disabled" rel="noopener noreferrer" target="_blank">
+                    <h3>PalaNote (no longer available)</h3>
+                    <p>(Hackathon 2022) A platform to share and collaborate on notes</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/quiznot">
+                    <h3>Quiznot</h3>
+                    <p>(Congressional App Challenge 2022) Make memorizing terms fun!</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://hsmc-coding-club.github.io/hsmc-code">
+                    <h3>HSMC Code</h3>
+                    <p>A learn-to-code platform built for our Coding Club at HSMC.</p>
+                </a>
+            </div>
+            <div class="section">
+                <h2>Other projects</h2>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/cheese2">
+                    <h3>Cheese2</h3>
+                    <p>My semi-sentient work-in-progress Discord bot!</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/siivadb">
+                    <h3>SiIvaDB</h3>
+                    <p>A database for browsing SiIvaGunner's thousands of high quality rips</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://chrome.google.com/webstore/detail/lecturelighter/ncmmnjgdnafpjbgmgjghmiciknejojfp">
+                    <h3>LectureLighter</h3>
+                    <p>Now a Chrome extension! Makes lectures easier to watch by taking out the silent parts</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/lecturelighter">
+                    <h3>LectureLighter Web</h3>
+                    <p>Make lectures easier to watch by taking out the silent parts</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/tpt2-tools">
+                    <h3>TPT2 Tools</h3>
+                    <p>A collection of tools for Theme Park Tycoon 2</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/5217">
+                    <h3>5217</h3>
+                    <p>A rehost of 5217.app (now down), a productivity tool. Work 52 min, break 17 min!</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/dlr-sounds">
+                    <h3>DLR Sounds</h3>
+                    <p>Immerse yourself in the sounds from the parks!</p>
+                </a>
+            </div>
+            <div class="section">
+                <h2>Humble beginnings</h2>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/homepage-maker/">
+                    <h3>Homepage Maker</h3>
+                    <p>Make your own homepage in the style of a previous version of my homepage</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://github.com/cabalex/google-doodle-mod-loader">
+                    <h3>Google Doodle Mod Loader</h3>
+                    <p>Add Friday Night Funkin' songs to the 2021 Olympics Google Doodle!</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://cabalex.github.io/fnf-song-converter/">
+                    <h3>FNF Song Converter</h3>
+                    <p>Convert Friday Night Funkin' songs to Scratch!</p>
+                </a>
+                <a class="project" rel="noopener noreferrer" target="_blank"
+                href="https://gist.github.com/cabalex/931885371f20a226e4c6a3391e2d3982">
+                    <h3>FNF XML Unpacker</h3>
+                    <p>Unpack Friday Night Funkin' assets from XML/PNG to separate sprites</p>
+                </a>
+            </div>
         </div>
-        <footer>
-            CABALEX 2023
-            <br>proudly open source (so go have fun!)
-            <br><a href="old/index.html">visit old site</a>
-        </footer>
-    </main>
-    <aside id="cheese" style="display: none">
-        <div class="textbox">
-            <h2>FUN FACT</h2>
-            <p id="cheeseText">This message isn't supposed to appear. Perhaps you disabled JavaScript or something?</p>
+    </section>
+    <footer>
+        <div>
+            <h2>cabalex 2024</h2>
+            <p>proudly open source (so go have fun!)</p>
+            <a href="./2023/index.html">See old site</a>
         </div>
-        <img src="./assets/cheese_1.png" id="cheeseImg" alt="cheese">
-    </aside>
-    <canvas id="background"></canvas>
-    <script src="index.js"></script>
+    </footer>
+    <script src="./script.js"></script>
 </body>
 </html>

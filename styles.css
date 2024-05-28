@@ -1,217 +1,468 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300..700&display=swap');
 
 :root {
+    --grain: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuZGV2L3N2Z2pzIiB2aWV3Qm94PSIwIDAgNzAwIDcwMCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiPjxkZWZzPjxmaWx0ZXIgaWQ9Im5ubm9pc2UtZmlsdGVyIiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHByaW1pdGl2ZVVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJsaW5lYXJSR0IiPgoJPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuMDUiIG51bU9jdGF2ZXM9IjQiIHNlZWQ9IjE1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHJlc3VsdD0idHVyYnVsZW5jZSI+PC9mZVR1cmJ1bGVuY2U+Cgk8ZmVTcGVjdWxhckxpZ2h0aW5nIHN1cmZhY2VTY2FsZT0iMTYiIHNwZWN1bGFyQ29uc3RhbnQ9IjAuNzUiIHNwZWN1bGFyRXhwb25lbnQ9IjIwIiBsaWdodGluZy1jb2xvcj0iIzU1NSIgeD0iMCUiIHk9IjAlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBpbj0idHVyYnVsZW5jZSIgcmVzdWx0PSJzcGVjdWxhckxpZ2h0aW5nIj4KICAgIAkJPGZlRGlzdGFudExpZ2h0IGF6aW11dGg9IjMiIGVsZXZhdGlvbj0iMTAwIj48L2ZlRGlzdGFudExpZ2h0PgogIAk8L2ZlU3BlY3VsYXJMaWdodGluZz4KICAKPC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9yZWN0PjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBmaWxsPSIjNTU1NTU1IiBmaWx0ZXI9InVybCgjbm5ub2lzZS1maWx0ZXIpIj48L3JlY3Q+PC9zdmc+");
+    --primary: #ed4245;
     --bg: #111;
-    --blue: #82AAFF;
-    --blue-dark: #4d7bcb;
-    --red: #FF5572;
-    --yellow: #FFCB6B;
-    --purple: #C792EA;
-    --green: #A9C77D;
-    --green-dark: #799650;
+    color-scheme: dark;
 }
 
-body {
-    background-color: var(--bg);
-    color: #ddd;
-    font-family: 'Roboto Mono', monospace;
+html, body {
     width: 100%;
     height: 100%;
     margin: 0;
+    background-color: var(--bg);
+    color: #efefef;
+    font-family: 'Roboto Mono', Arial, sans-serif;
 }
-h1, h2, h3, h4, h5 {
-    font-family: 'Work Sans', sans-serif;
-}
-.hidden {
-    font-family: 'Flow Circular', sans-serif;
-    font-size: 1.2em;
-    line-height: 0.8em;
-}
-.error {
-    color: var(--red);
-}
-main {
-    max-width: 500px;
-    width: calc(100% - 20px);
-    margin: 0 auto;
+h1 {
+    font-size: 32px;
+    font-family: 'Work Sans', Arial, sans-serif;
 }
 a {
-    color: var(--blue);
+    color: var(--primary);
     text-decoration: none;
     font-weight: bold;
 }
 
-.popup {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: auto;
-    width: min(490px, 100%);
-    height: 1em;
-    line-height: 1em;
-    background-color: var(--blue-dark);
-    z-index: 1;
+/* bento */
+section.bento {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    padding: 20px;
+}
+.bentoInner {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    grid-template-columns: minmax(315px, 1fr) 2fr 2fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.bentoInner > * {
+    background-color: #292929;
+    border-radius: 10px;
+    position: relative;
+    animation: slideIn 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-fill-mode: backwards;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#title, #intro, #support {
+    grid-column: 1 / 2;
+}
 
-    border-radius: 5px;
-    border: 2px solid var(--blue);
-    padding: 5px;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+/* bento > title */
+#title {
+    grid-row: 1 / 2;
+    background-color: #ed4245;
+    background-image: linear-gradient(45deg, #ed4245, #ed4245) var(--grain);
 }
-button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.2);
-    font-family: 'Roboto Mono', monospace;
-    padding: 5px;
-    cursor: pointer;
+.borderInner {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    background: #222;
+    background-image: var(--grain);
+    background-image: var(--grain), linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(90, 90, 90, 0.5));
 }
-.popup.success {
-    background-color: var(--green-dark);
-    border-color: var(--green);
-}
-.popup.error {
-    background-color: var(--red);
-    border-color: var(--red);
-    color: white;
-}
-.projectList {
+#title > .borderInner {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-.project {
+    justify-content: center;
     padding: 10px;
-    position: relative;
-    background-color: #222;
-    border-radius: 5px;
-    border: 2px solid var(--blue);
-    width: calc(100% - 24px);
+}
+#title h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+#title span {
+    color: white;
+    font-size: 20px;
+}
+
+/* bento > intro */
+#intro {
+    animation-delay: 100ms;
+    grid-row: 2 / 5;
+}
+#intro > .borderInner {
+    padding: 10px;
+}
+#intro h1 {
+    margin: 0;
+    font-size: 32px;
+    transform: rotate(-3deg);
+}
+#intro img {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+@media screen and (max-height: 900px) {
+    #intro img {
+        display: none;
+    }
+}
+
+/* bento > support */
+#support {
+    animation-delay: 200ms;
+    grid-row: 5 / 6;
+}
+#support > .borderInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* bento > gallery */
+#gallery {
+    animation-delay: 150ms;
+    grid-column: 2 / 4;
+    grid-row: 1 / 4;
+    overflow: hidden;
+}
+#gallery #carousel {
+    width: 100%;
+    height: 100%;
+}
+#leftGallery, #rightGallery {
+    position: absolute;
+    border-radius: 0;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60px;
+    width: 60px;
+    border-radius: 100px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+#leftGallery {
+    left: 10px;
+    z-index: 2;
+}
+#rightGallery {
+    right: 10px;
+    z-index: 2;
+}
+#carousel {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.carouselItem {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    align-items: end;
     gap: 10px;
-    justify-content: space-between;
+    color: white;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+.carouselItem .text {
+    width: calc(100% - 80px);
+    padding: 10px 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(0deg, rgba(20, 20, 20, 0.9) 10%, rgba(0, 0, 0, 0) 75%);
+}
+.carouselItem .tag {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin: 0;
+}
+.carouselItem h1 {
+    font-size: 48px;
+    margin: 0;
+}
 
-    transition: background-color 0.1s ease-in-out;
+/* bento > live */
+#live {
+    animation-delay: 250ms;
+    grid-column: 2 / 3;
+    grid-row: 4 / 6;
+    overflow: hidden;
 }
-div.project {
-    color: var(--purple);
-    border-color: var(--purple);
+#live .label {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
-a.project {
+#live .label h1, #live .label p {
+    margin: 0;
+}
+#live span {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #ed4245;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-weight: bold;
+}
+#live img, #live video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* bento > socials */
+#socials {
+    animation-delay: 350ms;
+    grid-column: 3 / 4;
+    grid-row: 4 / 6;
+    transition: background-color 0.2s ease-in-out;
+    text-align: center;
+}
+#socials h1 {
+    margin: 0;
+}
+#socials > .borderInner {
+    padding: 0 10px;
+    background: var(--grain) rgba(50, 50, 50, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+#socials p {
+    margin: 0;
+}
+.socialGrid {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.social {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: calc(100% - 20px);
+    max-width: 50px;
+    margin: 0 5px;
+    aspect-ratio: 1;
+    border-radius: 100px;
+    padding: min(20px, 1.5vw);
+    transition: background-color 0.2s ease-in-out;
+}
+.social:not(:hover) {
+    background-color: transparent !important;
+}
+.social img {
+    width: 100%;
+    max-width: 50px;
+}
+#socials:has(.github:hover), .github:hover {
+    background-color: #4078c0;
+}
+#socials:has(.youtube:hover), .youtube:hover {
+    background-color: #FF0000;
+}
+#socials:has(.twitter:hover), .twitter:hover {
+    background-color: #1da1f2;
+}
+#socials:has(.tumblr:hover), .tumblr:hover {
+    background-color: #596c84;
+}
+#socials:has(.email:hover), .email:hover {
+    background-color: #34a853;
+}
+
+/* projects */
+section.projects {
+    width: calc(100% - 40px);
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px;
+    margin: auto;
+}
+section.projects > h1 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+.projectList {
+    column-width: 300px;
+    column-count: auto;
+}
+.projectList h2 {
+    margin-top: 0;
+}
+.projectList .section {
+    break-inside: avoid;
+}
+.project {
     font-weight: unset;
+    display: flex;
+    break-inside: avoid;
+    flex-direction: column;
+    border-radius: 10px;
+    background: var(--grain) #222;
+    padding: 10px;
+    margin: 10px 0;
+    gap: 5px;
+    text-decoration: none;
+    transition: background 0.1s ease-in-out, outline 0.1s ease-in-out;
 }
-.project > * {
-    width: 50%;
+.project.disabled {
+    opacity: 0.5;
+}
+.project:not(.disabled):hover {
+    background: var(--grain) #333;
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+.project h3 {
+    margin: 0;
+    font-size: 24px;
     overflow-wrap: break-word;
 }
-.project h1 span {
-    font-size: 0.45em;
-    font-family: 'Roboto Mono', monospace;
-    display: block;
-}
-.project:after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    bottom: -1px;
-    right: -1px;
-    background-color: var(--blue);
-    clip-path: polygon(100% 100%, 0% 100%, 100% 0);
-    transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
-}
-div.project:after {
-    background-color: var(--purple);
-}
-a.project:hover {
-    background-color: #111;
-}
-a.project:hover:after {
-    width: 50px;
-    height: 50px;
+.project p {
+    color: #ccc;
+    margin: 0px;
 }
 
-aside#cheese {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: calc(calc(calc(100% - min(500px, 100%)) / 2) - 75px);
-    height: 100%;
-    margin: 0 25px;
-    z-index: 2;
-
+/* footer */
+footer {
+    height: 600px;
+    width: calc(100% - 40px);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(to bottom, var(--bg), transparent), url("/assets/footer.png");
+    background-position: center -10%;
+    background-size: cover;
 }
-#cheese img {
-    height: 50vh;
-}
-.textbox {
-    background-color: #aaa;
-    padding: 10px;
-    border: 2px solid #ccc;
-    color: black;
-}
-.textbox h2, .textbox p {
-    margin: 0;
-    font-weight: bold;
-}
-.textbox a {
-    color: var(--blue-dark)
-}
-.textbox span {
-    display: block;
-    font-size: 0.8em;
-}
-
-footer {
-    padding: 20px;
+footer > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: #222;
+    background: url('/beta/assets/bg-pattern.svg') #222;
+    padding: 20px 100px;
+    border-radius: 1000px;
+    margin: 0 auto;
     text-align: center;
-    font-size: 0.8em;
-    color: #aaa;
 }
-canvas#background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+footer h2, footer p, footer a {
+    margin: 0;
 }
 
-@media screen and (max-width: 1100px) {
-    main {
-        margin: 10px;
-    }
-    aside#cheese {
-        width: calc(calc(100% - min(500px, 100%)) - 75px);
+@media screen and (max-width: 1245px) {
+    #socials h1, #socials p {
+        display: none;
     }
 }
-@media screen and (max-width: 850px) {
-    main {
-        margin: auto;
+@media screen and (max-width: 800px) {
+    /* different layout for mobile */
+    section.bento {
+        height: unset;
     }
-    aside#cheese {
-        position: relative;
-        width: calc(100% - 50px);
-    }
-}
-@media screen and (max-width: 550px) {
-    .project {
+    .bentoInner {
+        display: block;
+        height: unset;
         flex-direction: column;
     }
-    .project > * {
+    .bentoInner > * {
+        margin-bottom: 10px;
+    }
+    #title {
+        height: 100px;
+    }
+    #intro, #socials {
+        padding: 10px;
+    }
+    #intro .borderInner, #socials .borderInner {
+        padding: 10px;
+        position: unset;
         width: 100%;
-        margin: 0;
+        height: 100%;
+    }
+    #intro .borderInner {
+        padding-bottom: 200px;
+    }
+    #intro img {
+        display: block;
+        width: 300px;
+        right: 10px;
+    }
+    #gallery {
+        height: 75vh;
+    }
+    #leftGallery, #rightGallery {
+        height: 200px;
+        width: 30px;
+        font-size: 20px;
+    }
+    #leftGallery {
+        border-radius: 0 100px 100px 0;
+        left: 0px;
+    }
+    #rightGallery {
+        border-radius: 100px 0 0 100px;
+        right: 0px;
+    }
+    #gallery .text {
+        padding: 10px;
+        width: calc(100% - 20px);
+    }
+    #gallery h1 {
+        font-size: 2.5em;
+    }
+    #gallery .tag {
+        font-size: 1em;
+    }
+    #socials h1, #socials p {
+        display: unset;
+    }
+    .social {
+        padding: 15px;
+    }
+    #support {
+        height: 100px;
+    }
+    footer div {
+        padding: 20px 40px;
     }
 }
