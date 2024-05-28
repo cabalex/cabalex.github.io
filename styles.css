@@ -108,6 +108,7 @@ section.bento {
 }
 #intro h1 {
     margin: 0;
+    width: 15ch;
     font-size: 32px;
     transform: rotate(-3deg);
 }
@@ -247,7 +248,7 @@ section.bento {
     transition: background-color 0.2s ease-in-out;
     text-align: center;
 }
-#socials h1 {
+#socials p, #socials h1 {
     margin: 0;
 }
 #socials > .borderInner {
@@ -257,9 +258,6 @@ section.bento {
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-}
-#socials p {
-    margin: 0;
 }
 .socialGrid {
     display: flex;
@@ -406,6 +404,7 @@ footer h2, footer p, footer a {
     }
     .bentoInner > * {
         margin-bottom: 10px;
+        animation: none;
     }
     #title {
         height: 100px;
@@ -420,7 +419,7 @@ footer h2, footer p, footer a {
         height: 100%;
     }
     #intro .borderInner {
-        padding-bottom: 200px;
+        padding-bottom: 150px;
     }
     #intro img {
         display: block;
@@ -455,12 +454,16 @@ footer h2, footer p, footer a {
     }
     #socials h1, #socials p {
         display: unset;
+        margin: unset;
     }
     .social {
         padding: 15px;
     }
     #support {
         height: 100px;
+    }
+    footer {
+        height: 300px;
     }
     footer div {
         padding: 20px 40px;
