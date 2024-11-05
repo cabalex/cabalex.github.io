@@ -185,7 +185,7 @@ section.bento {
     align-items: end;
     gap: 10px;
     color: white;
-    background-size: cover !important;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .carouselItem .text {
@@ -327,7 +327,7 @@ section.projects > h1 {
 .projectList .section {
     break-inside: avoid;
 }
-.project {
+.project, .source {
     font-weight: unset;
     display: flex;
     break-inside: avoid;
@@ -340,20 +340,39 @@ section.projects > h1 {
     text-decoration: none;
     transition: background 0.1s ease-in-out, outline 0.1s ease-in-out;
 }
+.project.clickable {
+    cursor: pointer;
+}
+.project span.tag {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    background-color: var(--primary);
+    color: white;
+    padding: 0px 0.5em;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+.project span.tag.unavailable {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 0.5em;
+    transform: translateY(1em);
+}
 .project.disabled {
     opacity: 0.5;
 }
-.project:not(.disabled):hover {
+.project:not(.disabled):hover, .source:hover {
     background: var(--grain) #333;
     outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
-.project h3 {
+.project h3, .source h3 {
     margin: 0;
     font-size: 24px;
     overflow-wrap: break-word;
 }
-.project p {
+.project p, .source p {
     color: #ccc;
     margin: 0px;
 }
@@ -385,6 +404,82 @@ footer > div {
 }
 footer h2, footer p, footer a {
     margin: 0;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.modalContent {
+    margin: 10px auto;
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: min(90%, 700px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: slideIn 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modalContent h1, .modalContent p {
+    margin: 0;
+}
+.modalContent p {
+    color: #ccc;
+}
+.modalContent h1 {
+    font-size: 1.5em;
+}
+.modalContent button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: unset;
+}
+.modalContent > img {
+    background-color: #111;
+    margin: auto;
+    max-height: 50vh;
+    max-width: 700px;
+    border-radius: 5px;
+}
+.btnrow {
+    display: flex;
+    gap: 10px;
+    justify-content: stretch;
+}
+.source {
+    width: 100%;
+    flex-direction: row;
+    background-color: #111;
+    align-items: center;
+    gap: 10px;
+}
+.source img {
+    width: 32px;
+    height: 32px;
 }
 
 @media screen and (max-width: 1245px) {
@@ -427,7 +522,7 @@ footer h2, footer p, footer a {
         right: 10px;
     }
     #gallery {
-        height: 75vh;
+        height: 500px;
     }
     #leftGallery, #rightGallery {
         height: 200px;

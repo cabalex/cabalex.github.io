@@ -9,6 +9,20 @@ const LIVE = [
 
 const GALLERY = [
     {
+        img: "santacruz-sidekick.png",
+        href: "https://santacruz-sidekick.vercel.app",
+        tag: "",
+        title: "",
+        desc: ""
+    },
+    {
+        img: "mcb-sub.png",
+        href: "https://cabalex.github.io/mcb-sub",
+        tag: "Change up!",
+        title: "Metal Cardbot SUB",
+        desc: "Watch Metal Cardbot with English subtitles - using the official way to watch the series!"
+    },
+    {
         img: "laundry.png",
         href: "https://slugsec.ucsc.edu/posts/Laundry-2024",
         tag: "money laundering?",
@@ -70,8 +84,18 @@ function createCarouselItem(item, i) {
     let carouselItem = document.createElement("a");
     carouselItem.className = "carouselItem";
     carouselItem.href = item.href;
+    carouselItem.target = "_blank";
     carouselItem.style.left = `${i * 100}%`;
     carouselItem.style.background = `url(./assets/gallery/${item.img})`;
+    if (!item.tag && !item.title && !item.desc) {
+        // only image
+        carouselItem.style.backgroundSize = "contain";
+        carouselItem.style.backgroundRepeat = "no-repeat";
+        carouselItem.style.backgroundPosition = "center";
+        return carouselItem;
+    }
+    carouselItem.style.backgroundSize = "cover";
+
     carouselItem.innerHTML = `
         <div class="text">
             <p class="tag">${item.tag}</p>
@@ -106,3 +130,35 @@ right.addEventListener("click", () => {
     carousel.style.transform = `translateX(-${carouselIndex * 100}%)`;
     autoScroll = false;
 })
+
+/* modal */
+let modalOpen = true;
+let modalContent = "";
+const closeModal = () => {
+    modalOpen = false;
+    document.getElementById("noLongerAvailableModal").style.display = "none";
+    document.body.style.overflow = "auto";
+    document.getElementById("modalPreview").src = "";
+}
+
+const noLongerAvailable = (img, sources, description) => {
+    modalOpen = true;
+    document.getElementById("noLongerAvailableModal").style.display = "block";
+    document.getElementById("noLongerAvailableModal").scrollTop = 0;
+    document.body.style.overflow = "hidden";
+    document.getElementById("modalPreview").src = "./assets/preview/" + img;
+
+    const sourcesElem = document.getElementById("sources");
+    sourcesElem.innerHTML = "";
+
+    document.getElementById("noLongerAvailableDescription").innerText = description;
+
+    for (let i = 0; i < sources.length; i++) {
+        let source = document.createElement("a");
+        source.className = "source";
+        source.href = sources[i];
+        source.target = "_blank";
+        source.innerHTML = `<img src="./assets/github.svg" alt="github"> <div class="text"><h3>${sources[i].split("/").pop()}</h3><p>view source</p></div>`;
+        sourcesElem.appendChild(source);
+    }
+}
