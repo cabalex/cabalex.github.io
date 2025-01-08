@@ -302,6 +302,78 @@ section.bento {
 #socials:has(.email:hover), .email:hover {
     background-color: #34a853;
 }
+#socials:has(.portfolioLink:hover) {
+    background-color: #555;
+}
+
+/* portfolio overrides */
+#socials > .borderInner {
+    justify-content: flex-start;
+    padding-top: 20px;
+    min-height: 400px;
+}
+
+@media screen and (max-width: 400px) {
+    .portfolioLink span {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 540px) {
+    #socials > .borderInner {
+        min-height: 300px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #socials > .borderInner {
+        min-height: unset;
+    }
+    .portfolioLink span {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .portfolioLink span {
+        display: unset;
+    }
+}
+
+.portfolioLink {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10%;
+    align-items: center;
+    width: 80%;
+    color: white;
+}
+.portfolioLink:hover span {
+    color: #fecb6b;
+    background-color: #555;
+}
+.portfolioLink span {
+    flex-grow: 1;
+    line-height: 1.5;
+    background-color: #222;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.portfolioLink img {
+    height: 200px;
+}
+.portfolioLink #portfolioHover, .portfolioLink:hover img:not(#portfolioHover) {
+    display: none;
+}
+.portfolioLink:hover #portfolioHover {
+    display: block;
+}
 
 /* projects */
 section.projects {
