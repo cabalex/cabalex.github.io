@@ -9,6 +9,20 @@ const LIVE = [
 
 const GALLERY = [
     {
+        img: "amtrack.png",
+        href: "https://amtrack.vercel.app",
+        tag: "arriving on time",
+        title: "Amtrack",
+        desc: "A real-time train tracker built for riders on the rails"
+    },
+    {
+        img: "mcb-sub.png",
+        href: "https://cabalex.github.io/mcb-sub",
+        tag: "now featuring Metal Cardbot W!",
+        title: "Metal Cardbot SUB",
+        desc: "Watch Metal Cardbot with English subtitles - using the official way to watch the series!"
+    },
+    {
         img: "santacruz-sidekick.png",
         href: "https://santacruz-sidekick.vercel.app",
         tag: "",
@@ -16,25 +30,11 @@ const GALLERY = [
         desc: ""
     },
     {
-        img: "mcb-sub.png",
-        href: "https://cabalex.github.io/mcb-sub",
-        tag: "Change up!",
-        title: "Metal Cardbot SUB",
-        desc: "Watch Metal Cardbot with English subtitles - using the official way to watch the series!"
-    },
-    {
         img: "laundry.png",
         href: "https://slugsec.ucsc.edu/posts/Laundry-2024",
         tag: "money laundering?",
         title: "Taking Down Big Laundry",
         desc: "How a friend and I accidentally found a vulnerability in one of the world's biggest laundry companies"
-    },
-    {
-        img: "get-tools.png",
-        href: "https://cabalex.github.io/get-tools",
-        tag: "new!",
-        title: "GET Tools",
-        desc: "View campus spending, scan in-store, and share with friends"
     },
     {
         img: "slugschedule.png",

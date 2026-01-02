@@ -444,9 +444,25 @@ section.projects > h1 {
     font-size: 24px;
     overflow-wrap: break-word;
 }
-.project p, .source p {
+.project p, .source p, .research p {
     color: #ccc;
     margin: 0px;
+}
+.research {
+    font-weight: unset;
+    break-inside: avoid;
+    border-radius: 10px;
+    border: 2px dashed #444;
+    background: var(--grain);
+    padding: 10px;
+    margin: 10px 0;
+    text-decoration: none;
+}
+.research h3 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 22px;
+    overflow-wrap: break-word;
 }
 
 /* footer */
