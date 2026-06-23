@@ -551,7 +551,9 @@ footer h2, footer p, footer a {
     margin: auto;
     max-height: 50vh;
     max-width: 700px;
+    width: 100%;
     border-radius: 5px;
+    aspect-ratio: 16/9;
 }
 .btnrow {
     display: flex;
